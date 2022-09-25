@@ -1,10 +1,13 @@
 import './App.css';
 import Watch from './components/watch/Watch';
+import Form from './components/Form/Form';
 
 function App() {
   return (
-    <Watch />
- 
+    <div className='container'>
+      <Form />
+
+    </div>
   );
 }
 

@@ -1,15 +1,7 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #091921;
 }
 
 .clock{
@@ -92,4 +84,14 @@ body{
     background-color: #fff;
     z-index: 12;
     border-radius: 6px 6px 0 0;
+}
+
+.material-symbols-outlined{
+    margin-left: 95%;
+    color: rgb(167, 179, 189);
+    font-size: 25px;
+}
+
+.material-symbols-outlined:hover{
+    font-size: 30px;
 }

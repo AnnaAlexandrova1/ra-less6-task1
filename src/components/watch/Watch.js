@@ -9,38 +9,48 @@ class Watch extends Component{
     }
 
     onUpdateClock = () => {
-        const deg = 6;
-        let day = new Date();
-        let hh = day.getHours() * 30;
-        let mm = day.getMinutes() * deg;
-        let ss = day.getSeconds() * deg;
+            const deg = 6;
+            let day = new Date();
+            let hh = day.getHours() * 30;
+            let mm = day.getMinutes() * deg;
+            let ss = day.getSeconds() * deg;
 
-        this.setState({
+            this.setState({
             hh,
             mm,
             ss
-        })
+            })
     }
 
     componentDidMount() {
-        this.onUpdateClock()
+        this.timerId = setInterval(() => this.onUpdateClock(), 1000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerId)
     }
     
 
     render() {
         const { hh, mm, ss } = this.state
         return (
-            <div className="clock">
-            <div className="hour">
-            <div className="hr" id="hr" style={{'transform': `rotateZ(${(hh) + (mm/12)}deg)`}}></div>
-            </div>
-            <div className="min">
+            <div className='clock-elem'>
+                 <span className="material-symbols-outlined">
+                 cancel
+                </span>
+
+                 <div className="clock">
+                <div className="hour">
+                <div className="hr" id="hr" style={{'transform': `rotateZ(${(hh) + (mm/12)}deg)`}}></div>
+                </div>
+                <div className="min">
                     <div className="mn" id="mn" style={{ 'transform': `rotateZ(${mm}deg)` }}></div>
-            </div>
-            <div className="sec">
-            <div className="sc" id="sc" style={{ 'transform': `rotateZ(${ss}deg)` }}></div>
-             </div>
-            </div>
+                </div>
+                <div className="sec">
+                <div className="sc" id="sc" style={{ 'transform': `rotateZ(${ss}deg)` }}></div>
+                </div>
+                </div>
+                </div>
         )
         
     }
