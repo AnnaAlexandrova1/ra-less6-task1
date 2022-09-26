@@ -5,7 +5,8 @@ class Watch extends Component{
     constructor(props) {
         super(props)
         this.cityName = this.props.cityName;
-        this.timeZone = this.props.timeZone
+        this.timeZone = this.props.timeZone;
+        this.onDelete = this.props.onDelete;
         this.state = {
         hh: null,
         mm: null,
@@ -33,16 +34,19 @@ class Watch extends Component{
     }
 
     componentWillUnmount() {
-        clearInterval(this.timerId)
+        clearInterval(this.timerId, this.props.id)
     }
     
+   
 
     render() {
         const { hh, mm, ss } = this.state
         return (
             <div className='clock-elem'>
                  <span className='city-name'>{this.props.cityName}</span>
-                 <span className="material-symbols-outlined">
+                <span className="material-symbols-outlined" onClick={() => {
+                    this.props.onDelete(this.props.id)
+                }}>
                  cancel
                 </span>
 

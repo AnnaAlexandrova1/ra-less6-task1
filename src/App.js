@@ -12,16 +12,21 @@ const App = () => {
         const cityName = evt.target.cityName.value;
         const timeZone = +evt.target.timeZone.value;
         const item = {
-          cityName: evt.target.cityName.value,
-          timeZone: +evt.target.timeZone.value,
+          cityName: cityName,
+          timeZone: +timeZone,
           id: nanoid()
         }
      if (cityName.length > 1 && timeZone > -13 && timeZone < 13) {
+       evt.target.cityName.value = '';
+       evt.target.timeZone.value = '';
            setWatches((prev) => [...prev, item]);
       }
    }
   
-   console.log(watches)
+    const onDelete = (id) => {
+    setWatches((prevWatches) => prevWatches.filter((item) => item.id !== id))
+    }
+  
   return (   
     <div className='container'>
 
@@ -41,8 +46,9 @@ const App = () => {
       </div>
       <div className='wathces-block'>
         {watches.map((item) => {
-          return <Watch timeZone={item.timeZone} key={item.id} cityName={item.cityName} />
-      })}
+          return <Watch timeZone={item.timeZone} key={item.id} cityName={item.cityName} onDelete={onDelete} id={item.id} />
+        })}
+        {watches.length < 1 ? 'Введите город и разницу по времени в формате UDC' : null}
       </div>
     </div>
   )
