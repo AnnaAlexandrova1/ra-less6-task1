@@ -3,10 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.clock-elem{
+    width: 251px;
+    margin-top: 35px;;
+    margin-right: 70px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 .clock{
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,8 +93,17 @@
     border-radius: 6px 6px 0 0;
 }
 
+.city-name{
+    color: rgb(167, 179, 189);
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 .material-symbols-outlined{
-    margin-left: 95%;
+    position: absolute;
+    top: 0;
+    right: 0;
     color: rgb(167, 179, 189);
     font-size: 25px;
 }

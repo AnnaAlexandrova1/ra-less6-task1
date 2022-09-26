@@ -2,16 +2,22 @@ import {Component} from 'react'
 import './watch.css'
 
 class Watch extends Component{
-    state = {
+    constructor(props) {
+        super(props)
+        this.cityName = this.props.cityName;
+        this.timeZone = this.props.timeZone
+        this.state = {
         hh: null,
         mm: null,
         ss: null
+     }
     }
 
     onUpdateClock = () => {
             const deg = 6;
             let day = new Date();
-            let hh = day.getHours() * 30;
+            const cz = day.getTimezoneOffset()/60
+            let hh = (day.getHours() + (cz > 0 ? -cz : cz) + this.props.timeZone) * 30;
             let mm = day.getMinutes() * deg;
             let ss = day.getSeconds() * deg;
 
@@ -35,6 +41,7 @@ class Watch extends Component{
         const { hh, mm, ss } = this.state
         return (
             <div className='clock-elem'>
+                 <span className='city-name'>{this.props.cityName}</span>
                  <span className="material-symbols-outlined">
                  cancel
                 </span>

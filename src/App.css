@@ -10,5 +10,51 @@ body{
   width: 70%;
   margin: 20vh auto;
   padding: 0;
-  border: 2px solid white;
+}
+
+.form-container{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.form-block{
+    margin-right: 3em;
+}
+
+.form-block label {
+    color:azure;
+    font-size: 16px;
+}
+
+.form-block input {
+    width: 10em;
+    margin-top: 1em;
+    padding: 3px;
+    height: 2em;
+    border-radius: 3px;
+}
+.form-block-btn{
+    padding: 3px;
+    height: 2em;
+    border-radius: 3px;
+}
+.form-block-btn:hover{
+   border: 2px solid grey;
+   box-shadow: 0 0 5px;
+}
+.wathces-block {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
