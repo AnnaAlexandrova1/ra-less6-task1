@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ra-less6-task1/static/css/main.3b74a835.css",
+    "main.js": "/ra-less6-task1/static/js/main.e9966f34.js",
+    "index.html": "/ra-less6-task1/index.html",
+    "main.3b74a835.css.map": "/ra-less6-task1/static/css/main.3b74a835.css.map",
+    "main.e9966f34.js.map": "/ra-less6-task1/static/js/main.e9966f34.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b74a835.css",
+    "static/js/main.e9966f34.js"
+  ]
+}
